@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon" href="node_modules/browser-sync-ui/public/img/favicon.ico">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title> Covid-19 Info</title>
+
+        <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
+
+    <script>
+
+			function GetSelectedValue(){
+				var e = document.getElementById("country");
+				var result = e.options[e.selectedIndex].value;
+
+				document.getElementById("result").innerHTML = result;
+			}
+
+			function GetSelectedText(){
+				var e = document.getElementById("country");
+				var result = e.options[e.selectedIndex].text;
+
+				document.getElementById("result").innerHTML = result;
+			}
+      function search() {
+        var e = document.getElementById("country");
+    var result = e.options[e.selectedIndex].value;
+    if(result==1){
+    alert("AASHA HOSPITAL, KK NURSING HOME, SPANDANA HOSPITAL");
+    }
+    if(result==2){
+      document.getElementById("demo").innerHTML = "List of vaccination centres";
+    }
+      }
+
+		</script>
+    
+    </head>
+    <body>
+    
+    <nav class="navbar navbar-expand-sm navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="index.html">About</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#"><img src="img/aid.png" height="30" width="30"></a>
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item ">
+                    <a class="nav-link" href="firstpage.html">Symptoms </a>
+                  </li>
+                  <li class="nav-item active">
+                    <a class="nav-link" href="secondpage.html">Vaccination Centres <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="thirdpage.html">Doctors</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="fourthpage.html">Contact Us</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Resources</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown01">
+                    <a class="dropdown-item" href="https://getplasma.in/" target="_blank">Plasma</a>
+                    <a class="dropdown-item" href="https://www.mohfw.gov.in/#" target="_blank">Hospitals</a>
+                    <a class="dropdown-item" href="https://www.cowin.gov.in/" target="_blank">Vaccination</a>
+                  </div>
+                  </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search info" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+              </form>
+            </div>
+          </nav>
+          <body class="text-center">
+
+          </body>
+          <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+            <header class="masthead mb-auto">
+              <div class="inner">
+                <h3 class="masthead-brand">Find vaccination centres near you</h3>
+                <hr>
+                <nav class="nav nav-masthead justify-content-center">
+                  
+                  <p class="top"> 18 and older is eligible to get the vaccine against Covid-19. Availability may vary by state.<br>
+                    You can search in <b>Co-WIN portal (or Aarogya Setu)</b> for the vaccination 
+                    centre nearest to your location by either searching through PIN code or by choosing the State and the District.</p>
+                      <div class="dropdown">
+                    <p class="top"> Select vaccination centres by state:</p>
+                    </p>
+                      <div class="dropdown">
+                        <select id="country">
+                          <option value="None">-- Select --</option>
+                          <option value="1">Andhra Pradesh</option>
+                          <option value="2" selected>Arunachal Pradesh</option>
+                          <option value="3">Assam</option>
+                          <option value="4">Bihar</option>
+                          <option value="5">Chhattisgarh</option>
+                          <option value="6">Goa</option>
+                          <option value="7">Gujarat</option>
+                          <option value="8">Haryana</option>
+                          <option value="9">Himachal Pradesh</option>
+                          <option value="10">Jharkhand</option>
+                          <option value="11">Karnataka</option>
+                          <option value="12">Kerala</option>
+                          <option value="13">Madhya Pradesh</option>
+                          <option value="14">Maharashtra</option>
+                          <option value="15">Manipur</option>
+                          <option value="16">Meghalaya</option>
+                          <option value="17">Mizoram</option>
+                          <option value="18">Nagaland</option>
+                          <option value="19">Odisha</option>
+                          <option value="20">Punjab</option>
+                          <option value="21">Rajasthan</option>
+                          <option value="22">Sikkim</option>
+                          <option value="23">Tamil Nadu</option>
+                          <option value="24">Telangana</option>
+                          <option value="25">Tripura</option>
+                          <option value="26">Uttar Pradesh</option>
+                          <option value="27">Uttarakhand</option>
+                          <option value="28">West Bengal</option>
+                        </select>
+                        
+                      </div>
+                      <br>
+                      <br>
+                      <p class="top"> Enter pincode:</p>
+                      <input type="number" name="pincode" id="pincode"> <br> <br>
+                      <button onclick="search()" class="search"> Search </button>
+                      <br>
+                      <a id="demo" target="_blank" href="https://pmjay.gov.in/sites/default/files/2021-02/PMJAY_empanelled_hospitals_0.pdf"></a>
+                    </div>
+             </nav>
+             <hr>
+              </div>
+            </header>
+            <a class="nav-link active" href="index.html">Home</a>
+            </div>
+            <footer class="container align-items-center min-vh-50">
+          <div class="container-fluid">
+            <div class="row text-center">
+                <div class="col-12">&copy; Pharma Company 2019-2020</div>
+            </div>
+          </div>
+          </footer>
+          <!-- jQuery, Popper.js, then Bootstrap JS. -->
+        <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+        <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+        <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+            </body>
+</html>
